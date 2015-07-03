@@ -1,0 +1,71 @@
+.transitionEffect(@string) when (isstring(@string)){
+	-webkit-transition: e(@string);
+	-moz-transition: e(@string);
+	-o-transition: e(@string);
+	transition: e(@string);
+}
+
+.transitionEffect(@effect) when not (isstring(@effect)){
+	-webkit-transition: @effect;
+	-moz-transition: @effect;
+	-o-transition: @effect;
+	transition: @effect;
+}
+
+.borderRadius(@string) when (isstring(@string)){
+	-webkit-border-radius: e(@string);
+	-moz-border-radius: e(@string);
+	-o-border-radius: e(@string);
+	border-radius: e(@string);
+}
+
+.borderRadius(@pixel) when not (isstring(@pixel)){
+	-webkit-border-radius: @pixel;
+	-moz-border-radius: @pixel;
+	-o-border-radius: @pixel;
+	border-radius: @pixel;
+}
+
+.boxShadow(@string) when (isstring(@string)){
+	-webkit-box-shadow: e(@string);
+	-moz-box-shadow: e(@string);
+	-o-box-shadow: e(@string);
+	box-shadow: e(@string);
+}
+
+.boxShadow(@color) when not (isstring(@color)){
+	-webkit-box-shadow: 0px 0px 8px 0px @color;
+	-moz-box-shadow: 0px 0px 8px 0px @color;
+	-o-box-shadow: 0px 0px 8px 0px @color;
+	box-shadow: 0px 0px 8px 0px @color;
+	border-color: @color;
+}
+
+.inputInset(@color) {
+	-webkit-box-shadow: inset 0px 0px 1px @color;
+	-moz-box-shadow: inset 0px 0px 1px @color;
+	-o-box-shadow: inset 0px 0px 1px @color;
+	box-shadow: inset 0px 0px 1px @color;
+}
+
+.boxShadowNone{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+.boxSizing(@type){
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	-o-box-sizing: @type;
+	box-sizing: @type;
+}
+
+.blur(@pixel){
+	-webkit-filter: blur(@pixel);
+	-moz-filter: blur(@pixel);
+	-ms-filter: blur(@pixel);
+	-o-filter: blur(@pixel);
+	filter: blur(@pixel);
+}

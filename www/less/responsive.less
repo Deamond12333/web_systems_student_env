@@ -1,0 +1,307 @@
+@media screen and (max-width: 1200px) {
+	.container{
+		width: 1100px;
+	}
+}
+
+@media screen and (max-width: 1160px){
+	.container{
+		width: 90%;
+		.nav.fixed-top{
+			width: 90%;
+		}
+	}
+	.nav{
+		.container{
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 960px){
+	.container{
+		.row, [class *= "column"]{
+			.span4{
+				width: 50%;
+				padding: 0.5em 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px){
+	*{
+		.transitionEffect(all linear 0s);
+	}
+
+	p{
+		line-height: 1.5em;
+	}
+
+	.nav.collapse {
+		.container{
+			width: 100%;
+		}
+	}
+
+	div, section, nav{
+		&.nav-wrapper{
+			position: relative;
+			z-index: 999;
+			.nav.collapse {
+				display: inherit;
+				padding-top: 30px;
+				&.rounded.fixed-top{
+					.boxShadow("0 0 11px #BBB;");
+					.borderRadius("0 0 4px 4px");
+					width: 90%;
+					left: 5%;
+					right: 5%;
+				}
+				ul {
+					padding: 5px 0;
+					max-height: 0;
+					overflow: hidden;
+					display: inherit;
+					.transitionEffect("max-height linear 0.3s");
+				}
+
+				li {
+					width: 100%;
+					margin: 2px 0;
+					display: none;
+					&.last, &:last-child{
+						margin-bottom: 0;
+					}
+					a{
+						.borderRadius(0px);
+					}
+				}
+
+				.nav-handle {
+					display: block;
+				}
+			}
+		}
+
+		#nav-checkbox:checked + .nav {
+			ul {
+				max-height: 300px;
+				.transitionEffect("max-height linear 0.3s");
+			}
+
+			li {
+				display: block;
+			}
+			.nav-handle {
+				border-color: lighten(@primaryColor, 10%);
+				&:after, &:before {
+					border-color: lighten(@primaryColor, 10%);
+				}
+			}
+		}
+	}
+
+	.container{
+		h1, .h1{
+			font-size: 1.75em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h2, .h2{
+			font-size: 1.65em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h3, .h3{
+			font-size: 1.5em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h4, .h4{
+			font-size: 1.3em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h5, .h5{
+			font-size: 1.2em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h6, .h6{
+			font-size: 1.05em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		
+
+		ul.stylized.center{
+			margin: 0;
+		}
+
+		div, section, header{
+			&.header{
+				.container{
+					h1 {
+						font-size: 4em;
+					}
+				}
+			}
+		}
+
+		iframe{
+			width: 100%;
+		}
+
+		textarea{
+			width: 100%;
+			.boxSizing(border-box);
+			margin: 5px 0;
+
+			&.resize{
+				resize: none !important;
+			}
+		}
+
+		input[type="search"],
+		input[type="text"].search{
+			width: 150px;
+			max-width: 150px;
+			
+			&:focus{
+				width: 150px;
+			}
+		}
+
+		.nav .menu-ul{
+			display: block;
+		}
+
+		.row, [class *= "column"]{
+			[class *= "span"]{
+				width: 100%;
+				padding: 0.5em 0;
+			}
+		}
+
+		div, section{
+			&[class *= "column"]{
+				width: 100%;
+			}
+		}
+
+
+		img{
+			&.portrait{
+				padding: 2%;
+				.boxSizing(border-box);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	div, section, header{
+		&.header{
+			.container{
+				h1 {
+					font-size: 3.5em;
+				}
+			}
+		}
+	}
+	.container{
+		h1, .h1{
+			font-size: 1.65em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h2, .h2{
+			font-size: 1.5em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h3, .h3{
+			font-size: 1.4em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		h4, .h4{
+			font-size: 1.3em;
+			margin: 25px 0px 10px 0;
+			font-weight: 300;
+		}
+
+		input[type="tel"],
+		input[type="url"],
+		input[type="text"],
+		input[type="date"],
+		input[type="time"],
+		input[type="week"],
+		input[type="color"],
+		input[type="email"],
+		input[type="month"],
+		input[type="number"],
+		input[type="search"],
+		input[type="password"],
+		input[type="datetime-local"]
+		input[type="text"].search,
+		input[type="text"].search:focus{
+			width: 100%;
+			.boxSizing(border-box);
+		}
+
+		form{
+			&.stylized{
+				&.stacked{
+					width: 100%;
+				}
+			}
+		}
+
+		button,
+		input[type="submit"]{
+			width: 100% !important;
+			margin: 3px 0px !important;
+		}
+
+		a{
+			&.btn, &.btn-blue, &.btn-red, &.btn-orange,
+			&.btn-yellow, &.btn-green, &.btn-black, &.btn-white{
+				display: block;
+				margin: 10px 0px !important;
+			}
+		}
+
+		input[type="search"],
+		input[type="text"].search{
+			width: 100%;
+			max-width: inherit;
+		}
+
+		textarea{
+			min-width: inherit;
+		}
+	}
+}
+
+@media screen and (max-width: 322px) {
+	div, section, header{
+		&.header{
+			.container{
+				h1 {
+					font-size: 2.5em;
+				}
+			}
+		}
+	}
+}

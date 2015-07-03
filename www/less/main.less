@@ -1,0 +1,174 @@
+*{
+	.boxSizing(border-box);
+}
+
+html{
+	overflow-y: scroll; 
+}
+
+body{
+	font-family: @bodyFontFamily;
+	font-weight: @bodyFontWeight;
+	font-size: @bodyFontSize;
+	color: @textColor;
+	text-rendering: optimizeLegibility;
+}
+
+div, section, header{
+	&.header{
+		width: @headerWidth;
+		height: @headerHeight;
+		padding: @headerPadding;
+		cursor: default;
+
+		h1{
+			&.title{
+				.transitionEffect(color linear 0.8s);
+				display:block;
+				font-family: @headerH1FontFamily;
+				font-weight: @headerH1FontWeight;
+				font-size: @headerH1FontSize;
+				color: @textColor;
+
+				&:hover{
+					color: @headerH1HoverColor;
+					.transitionEffect(color linear 0.8s);
+				}
+			}
+		}
+	}
+}
+
+div, section, footer{
+	&.footer{
+		width: @footerWidth;
+		position: relative;
+		z-index: 10;
+		font-size: @footerFontSize;
+		padding: @footerPadding;
+		clear: both;
+		
+		&:after{
+			content: @footerLastChildAfterContent;
+			display: @footerLastChildAfterDisplay;
+			margin: @footerLastChildMargin;
+			font-weight: bold;
+			text-align: @footerLastChildAfterTextAlign;
+		}
+	}
+}
+
+img{
+	&.stylized{
+		.transitionEffect(@imgStylizedTransitionEffect);
+		.boxShadow(@imgStylizedBoxShadow);
+		&:hover{
+			.transitionEffect(@imgStylizedHoverTransitionEffect);
+			.boxShadow(@imgStylizedHoverBoxShadow);
+		}
+	}
+
+	&.rounded{
+		.borderRadius(@imgRounded);
+	}
+
+	&.img-circle{
+		.borderRadius(@imgCircle);
+	}
+
+	&.portrait{
+		padding: @imgPortraitPadding;
+		background-color: @imgPortraitBackgroundColor;
+		.boxSizing(@imgPortraitBoxSizing);
+		.transitionEffect(@imgPortraitTransitionEffect);
+	}
+}
+
+.adaptive{
+	width: 100% !important;
+	.boxSizing(border-box);
+}
+
+.container,
+.container-fixed{
+	margin-right: @containerMarginRight;
+	margin-left: @containerMarginLeft;
+	position: relative;
+	width: @containerWidth;
+	&:after, &:before{
+		display: table;
+		content: " ";
+	}
+}
+
+.fixed{
+	position: fixed;
+}
+
+.main-content{
+	width: @mainContentWidth;
+	padding: @mainContentPadding;
+	display: table;
+}
+
+.clear{
+	clear: both;
+}
+
+.clear-right{
+	clear: right;
+}
+
+.clear-left{
+	clear: left;
+
+}
+
+.float-none{
+	float: none;
+}
+
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
+hr{
+	background-color: @hrBackgroundColor;
+	border: @hrBorder;
+	margin: @hrMargin;
+	height: @hrHeight;
+	clear: both;
+	width: @hrWidth;
+}
+
+a{
+	text-decoration: @aTextDecoration;
+	color: @aColor;
+	outline-style: none;
+	.transitionEffect(@aTransitionEffect);
+	
+	&:hover{
+		text-decoration: @aHoverTextDecoration;
+		color: darken(@aColor, 15%);
+		.transitionEffect(@aHoverTransitionEffect);
+	}
+
+	&[target="_blank"], &[target="_top"]{
+		color: @aBlankColor;
+		&:hover{
+			text-decoration: @aBlankHoverTextDecoration;
+			color: @aBlankHoverColor;
+			.transitionEffect(@aBlankHoverTransitionEffect);
+		}
+	}
+}
+
+// for IE8
+input[type="submit"]:focus,
+input[type="button"]:focus{     
+	outline: none;	
+}

@@ -1,0 +1,109 @@
+div, section{
+	&.row, &[class *= "column"]{
+			> [class *= "span"]{
+			float: left;
+		}
+
+		[class *= "span"]{
+			& :first-child{
+				margin-top: @spanFirstChildMarginTop;
+			}
+			& :last-child{
+				margin-bottom: @spanLastChildMarginBottom;
+			}
+		}
+	}
+}
+
+[class *= "span"],
+[class *= "column"]{
+	.boxSizing(border-box);
+}
+
+[class *= "span"]{
+	padding: @spanPadding;
+}
+
+.span1{
+	width: 100%;
+}
+
+.span2{
+	width: 50%;
+}
+
+.span3{
+	width: 33.33%;
+}
+
+.span4{
+	width: 25%;
+}
+
+.span5{
+	width: 20%;
+}
+
+div, section{
+	&.row{
+		width: 100%;
+		margin-bottom: @rowMarginBottom;
+		+ .row{
+			margin-top: 20px;
+		}
+	}
+	&.row, &[class *= "column"]{
+		display: inline-block;
+		height: auto;
+		position: relative;
+	}
+
+	&.column1-2{
+		width: 50%;
+		float: left;
+	}
+
+	&.column1-3{
+		width: 33%;
+		float: left;
+	}
+
+	&.column2-3{
+		width: 67%;
+		float: left;
+	}
+
+	&.column1-4{
+		width: 25%;
+		float: left;
+	}
+
+	&.column3-4{
+		width: 75%;
+		float: left;
+	}
+
+	&.column1-5{
+		width: 20%;
+		float: left;
+	}
+
+	&.column4-5{
+		width: 80%;
+		float: left;
+	}
+
+
+	&.cell{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	&.cover{
+		display: table;
+		height: 100%;
+		width: 100%;
+		background: no-repeat center center fixed;
+	}
+}

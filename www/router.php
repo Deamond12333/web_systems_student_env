@@ -1,6 +1,18 @@
 <?php
 include_once 'account.routes.php';
 include_once 'home.routes.php';
+require_once('Smarty.class.php');
+
+function newTemplate()
+{
+    $smarty = new Smarty();
+    $smarty->template_dir = 'templates';
+    $smarty->compile_dir = 'template_c';
+    $smarty->config_dir = 'configs';
+    $smarty->cache_dir = 'caches';
+    return $smarty;
+}
+
 class Router {
 
   private static $routes = array();
@@ -33,15 +45,20 @@ class Router {
     $active_routes = self::$routes[$method];
 
     // Для всех роутов
-    foreach ($active_routes as $pattern => $callback) {
+    foreach ($active_routes as $pattern => $callback)
+    {
       // Если REQUEST_URI соответствует шаблону - вызываем функцию
-      if (preg_match_all("/$pattern/", $uri, $matches)){
-          if(count($matches) > 2)
-              $callback($matches[2][0]);
-          else
-              $callback();
-        break;
-      }
+      if (preg_match_all("/$pattern/", $uri, $matches))
+      {
+          array_shift($matches);
+          $args = array();
+          foreach($matches as $match)
+          {
+              $args[] = $match[0];
+          }
+          call_user_func_array($callback, $args);
+          break;
+      }        
       $matches = array();
     }
   }

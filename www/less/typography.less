@@ -1,0 +1,106 @@
+div, blockquote{
+	&.blockquote{
+		padding: @blockquotePadding;
+		border-left: @blockquoteBorderLeft;
+		border-color: @blockquoteBorderColor;
+		width: @blockquoteWidth;
+		margin: @blockquoteMargin;
+		font-style: @blockquoteFontStyle;
+		line-height: @blockquoteLineHeight;
+		display: @blockquoteDisplay;
+
+		cite{
+			font-size: @citeFontSize;
+			font-style: @citeFontStyle;
+			display: @citeDisplay;
+			padding: @citePadding;
+
+			&:before{
+				content: "- ";
+			}
+		}
+	}
+}
+
+code{
+	color: #363636;
+	font-size: 13px;
+	padding: 1px 5px;
+	white-space: nowrap;
+	border: 1px solid #DDDDDD;
+	background-color: #F9F9F9;
+	font-family: Consolas, Courier, monospace;
+	.borderRadius(3px);
+	&.red{
+		color: #DF0000;
+	}
+	&.orange{
+		color: #FA7800
+	}
+	&.green{
+		color: #0FA302;
+	}
+}
+
+q{
+	padding: @qPadding;
+	border-left: @qBorderLeft;
+	font-style: @qFontStyle;
+	display: @qDisplay;
+	line-height: @qLineHeight;
+}
+
+h1, .h1{
+	font-size: @h1FontSize;
+	margin: @h1Margin;
+	font-weight: @h1FontWeight;
+	line-height: @h1LineHeight;
+}
+
+h2, .h2{
+	font-size: @h2FontSize;
+	margin: @h2Margin;
+	font-weight: @h2FontWeight;
+	line-height: @h2LineHeight;
+}
+
+h3, .h3{
+	font-size: @h3FontSize;
+	margin: @h3Margin;
+	font-weight: @h3FontWeight;
+	line-height: @h3LineHeight;
+}
+
+h4, .h4{
+	font-size: @h4FontSize;
+	margin: @h4Margin;
+	font-weight: @h4FontWeight;
+	line-height: @h4LineHeight;
+}
+
+h5, .h5{
+	font-size: @h5FontSize;
+	margin: @h5Margin;
+	font-weight: @h5FontWeight;
+	line-height: @h5LineHeight;
+}
+
+h6, .h6{
+	font-size: @h6FontSize;
+	margin: @h6Margin;
+	font-weight: @h6FontWeight;
+	line-height: @h6LineHeight;
+}
+
+p{
+	line-height: @pLineHeight;
+	font-size: @pFontSize;
+}
+
+p + p{
+	margin-top: 15px;
+}
+
+strong, b{
+	font-weight: bold;
+}
